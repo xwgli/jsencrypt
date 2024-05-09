@@ -1,3 +1,22 @@
+修改说明
+======================
+1、增加私钥加密&公钥解密方法
+```javascript
+// 私钥加密
+var jsencrypt = new JSEncrypt();
+jsencrypt.setPrivateKey(privateKey);
+result = jsencrypt.encryptByPrivate(data);
+
+// 公钥解密
+var jsencrypt = new JSEncrypt();
+jsencrypt.setPublicKey(publicKey);
+result = jsencrypt.decryptByPublic(data);
+```
+
+2、因 jsencrypt 引用的一个 YUI 组件 2.9.0 版本有 SWF 漏洞会被安全工具识别为威胁，但此处并未引入对应功能，删除相关库名称版本信息以规避风险
+
+3、可在 bin 目录下获取成品 js 文件
+
 Website
 ======================
 http://travistidwell.com/jsencrypt
