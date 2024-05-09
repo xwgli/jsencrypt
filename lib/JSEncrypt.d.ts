@@ -50,6 +50,16 @@ export declare class JSEncrypt {
      */
     decrypt(str: string): string | false;
     /**
+     * 增加一个使用公钥解密的方法
+     * Proxy method for RSAKey object's decrypt, decrypt the string using the public
+     * components of the rsa key object. Note that if the object was not set will be created
+     * on the fly (by the getKey method) using the parameters passed in the JSEncrypt constructor
+     * @param {string} str base64 encoded crypted string to decrypt
+     * @return {string} the decrypted string
+     * @public
+     */
+    decryptByPublic(str: string): string | false;
+    /**
      * Proxy method for RSAKey object's encrypt, encrypt the string using the public
      * components of the rsa key object. Note that if the object was not set will be created
      * on the fly (by the getKey method) using the parameters passed in the JSEncrypt constructor
@@ -58,6 +68,16 @@ export declare class JSEncrypt {
      * @public
      */
     encrypt(str: string): string | false;
+    /**
+     * 增加一个使用私钥加密的方法
+     * Proxy method for RSAKey object's encrypt, encrypt the string using the private
+     * components of the rsa key object. Note that if the object was not set will be created
+     * on the fly (by the getKey method) using the parameters passed in the JSEncrypt constructor
+     * @param {string} str the string to encrypt
+     * @return {string} the encrypted string encoded in base64
+     * @public
+     */
+    encryptByPrivate(str: string): string | false;
     /**
      * Proxy method for RSAKey object's sign.
      * @param {string} str the string to sign
